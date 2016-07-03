@@ -652,6 +652,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 906802254}
+  - 114: {fileID: 906802255}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -681,6 +682,19 @@ Transform:
   - {fileID: 1628937213}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &906802255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 906802253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fcddcad45f5c743a9a8ba8ed7b3f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 3
+  tileWidth: 4
 --- !u!1 &1028455774
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +762,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1060119589}
+  - 114: {fileID: 1060119590}
   m_Layer: 0
   m_Name: Dune
   m_TagString: Untagged
@@ -777,6 +792,19 @@ Transform:
   - {fileID: 507649853}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &1060119590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060119588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fcddcad45f5c743a9a8ba8ed7b3f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 1
+  tileWidth: 4
 --- !u!1 &1072958751
 GameObject:
   m_ObjectHideFlags: 0
