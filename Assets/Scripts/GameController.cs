@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour {
     public GameObject gameCamera;
     public GameObject playerObject;
     public bool isStopped = false;
+    public bool isGameOver = false;
     public Color stopColor;
     public Color startColor;
 
@@ -24,16 +25,23 @@ public class GameController : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (keyPushed && !Input.GetKey("space")) {
-            keyPushed = false;
-        } else if (!keyPushed && Input.GetKey("space")) {
-            keyPushed = true;
-            ButtonPressed();
-        }
+        if (timer > 180) {
+            isStopped = true;
+            isGameOver = true;
+            animatorComponent.SetInteger("run", 1);
+            cameraComponent.backgroundColor = stopColor;
+        } else {
+            if (keyPushed && !Input.GetKey("space")) {
+                keyPushed = false;
+            } else if (!keyPushed && Input.GetKey("space")) {
+                keyPushed = true;
+                ButtonPressed();
+            }
 
-        timer += Time.deltaTime;
-        if (!isStopped) {
-            distanceTimer += Time.deltaTime;
+            timer += Time.deltaTime;
+            if (!isStopped) {
+                distanceTimer += Time.deltaTime;
+            }
         }
     }
     

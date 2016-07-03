@@ -49,7 +49,7 @@ public class CourgetteController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (!falling && Random.value < 0.05) {
+        if (!falling && Random.value < 0.05 && !controller.isGameOver) {
             falling = true;
             transform.position = startPosition;
             internalClockX = Random.value * 1.0f;
