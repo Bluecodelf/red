@@ -57,8 +57,9 @@ public class CourgetteController : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter(Collision collision) {
-        controller.timer -= 20f;
+    void OnTriggerEnter2D(Collider2D other) {
+        controller.timer += 20f;
+        Debug.Log("collision");
     }
 
 }

@@ -9,6 +9,7 @@ public class Score : MonoBehaviour {
     private int distance;
     private GUIText display;
     private GameController controller;
+    private string text;
 
 	void Start () {
         display = GetComponent<GUIText>();
@@ -18,7 +19,14 @@ public class Score : MonoBehaviour {
 	void Update () {
         timer = 180-(int) controller.timer;
         distance = (int) (controller.distanceTimer * 4.0f); // 4 meters/second
-        display.text = "Time left: " + timer + "\nDistance: " + distance;
+        text = "Time left: " + timer + "\nDistance: " + distance;
+
+        if (timer <= 0)
+        {
+            text = "GAME OVER!\nDistance: " + distance;
+        }
+
+        display.text = text;
 	}
 
 }
