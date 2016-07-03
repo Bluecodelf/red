@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour {
     public Color stopColor;
     public Color startColor;
 
+    public float timer;
+    public float distanceTimer;
+
     private bool keyPushed = false;
     private Camera cameraComponent;
     private Animator animatorComponent;
@@ -16,6 +19,8 @@ public class GameController : MonoBehaviour {
 	void Start () {
         cameraComponent = gameCamera.GetComponent<Camera>();
         animatorComponent = playerObject.GetComponent<Animator>();
+        timer = 0.0f;
+        distanceTimer = 0.0f;
 	}
 	
 	void Update () {
@@ -25,7 +30,12 @@ public class GameController : MonoBehaviour {
             keyPushed = true;
             ButtonPressed();
         }
-	}
+
+        timer += Time.deltaTime;
+        if (!isStopped) {
+            distanceTimer += Time.deltaTime;
+        }
+    }
     
     void ButtonPressed() {
         isStopped = !isStopped;

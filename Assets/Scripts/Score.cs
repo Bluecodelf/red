@@ -3,24 +3,22 @@ using System.Collections;
 
 public class Score : MonoBehaviour {
 
+    public GameObject gameController;
+
     private int timer;
     private int distance;
     private GUIText display;
-    public GameController gameController;
+    private GameController controller;
 
-	// Use this for initialization
-	void Start () 
-    {
+	void Start () {
         display = GetComponent<GUIText>();
+        controller = gameController.GetComponent<GameController>();
 	}
 	
-	// Update is called once per frame
-	void Update () 
-    {
-        timer = gameController.timer;
-        distance = gameController.distance;
-        display = "Time left: " + timer + "\n Distance: " + distance;
-
-        timer -= Time.deltaTime;
+	void Update () {
+        timer = (int) controller.timer;
+        distance = (int) (controller.distanceTimer * 4.0f); // 4 meters/second
+        //display = "Time left: " + timer + "\n Distance: " + distance;
 	}
+
 }
