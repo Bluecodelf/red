@@ -16,9 +16,9 @@ public class Score : MonoBehaviour {
 	}
 	
 	void Update () {
-        timer = (int) controller.timer;
+        timer = 180-(int) controller.timer;
         distance = (int) (controller.distanceTimer * 4.0f); // 4 meters/second
-        display.text = "Time left: " + timer + "\n Distance: " + distance;
+        display.text = "Time left: " + timer + "\nDistance: " + distance;
 	}
 
 }

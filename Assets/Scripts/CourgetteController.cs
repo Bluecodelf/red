@@ -15,6 +15,8 @@ public class CourgetteController : MonoBehaviour {
     private float internalClockY;
     private float lastTick;
 
+    private BoxCollider2D collider;
+
     private bool falling = false;
 
     void Start() {
@@ -24,6 +26,8 @@ public class CourgetteController : MonoBehaviour {
         internalClockX = 0.0f;
         internalClockY = 0.0f;
         lastTick = Time.time;
+
+        collider = GetComponent<BoxCollider2D>();
     }
 
     void Update() {
@@ -51,6 +55,10 @@ public class CourgetteController : MonoBehaviour {
             internalClockX = Random.value * 1.0f;
             internalClockY = 0.0f;
         }
+    }
+
+    void OnCollisionEnter(Collision collision) {
+        controller.timer -= 20f;
     }
 
 }
