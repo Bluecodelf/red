@@ -7,16 +7,16 @@ public class LightController : MonoBehaviour {
     public Sprite onSprite;
     public Sprite offSprite;
 
-    private SpriteRenderer renderer;
+    private SpriteRenderer spriteRenderer;
     private GameController controller;
 
 	void Start () {
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         controller = gameController.GetComponent<GameController>();
 	}
 	
 	void Update () {
-        renderer.sprite = (controller.isStopped) ? offSprite : onSprite;
+        spriteRenderer.sprite = (controller.isStopped) ? offSprite : onSprite;
 	}
 
 }
